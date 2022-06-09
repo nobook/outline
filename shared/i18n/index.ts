@@ -79,7 +79,7 @@ const underscoreToDash = (text: string) => text.replace("_", "-");
 
 const dashToUnderscore = (text: string) => text.replace("-", "_");
 
-export const initI18n = (defaultLanguage = "en_US") => {
+export const initI18n = (defaultLanguage = "zh_CN") => {
   const lng = underscoreToDash(defaultLanguage);
   i18n
     .use(backend)
