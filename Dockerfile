@@ -1,5 +1,5 @@
 ARG APP_PATH=/opt/outline
-FROM registry.cn-qingdao.aliyuncs.com/nobook/outline_base_image:gitlab-runner as base
+FROM registry.cn-qingdao.aliyuncs.com/nobook/outline-base-image:gitlab-runner as base
 
 ARG APP_PATH
 WORKDIR $APP_PATH
