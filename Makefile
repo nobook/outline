@@ -1,5 +1,5 @@
 up:
-	docker-compose up -d redis postgres s3
+	docker-compose up -d redis postgres s3 sso storage
 	yarn install --pure-lockfile
 	yarn sequelize db:migrate
 	yarn dev:watch

@@ -20,3 +20,27 @@ services:
       - "127.0.0.1:4569:4569"
     volumes:
       - ./fakes3:/fakes3_root
+  sso:
+    image: soulteary/sso-server:1.1.5
+    environment:
+      CLIENT_NAME: "NOBOOK-SSO-SERVER"
+      CLIENT_ID: b8c40013-cc03-4bc5-b3a5-6a31046fa415
+      CLIENT_SECRET: 26272010-37d9-4bea-a58e-6b0a382d7626
+      USER_PASS: 9c224b9ed986c5f772
+    ports:
+      - "8787:80"
+  storage:
+    container_name: minio
+    image: minio/minio
+    env_file: ./.env
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+  #  entrypoint: sh
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: outline
+      MINIO_ROOT_PASSWORD: 0cd73e307cce16e10eec93de
+      MINIO_REGION_NAME: cn-nobook-1
+    volumes:
+      - ./storage-data:/data
