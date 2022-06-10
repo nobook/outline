@@ -20,7 +20,6 @@ import RootStore from "~/stores/RootStore";
 import Document from "~/models/Document";
 import Revision from "~/models/Revision";
 import DocumentMove from "~/scenes/DocumentMove";
-import Branding from "~/components/Branding";
 import ConnectionStatus from "~/components/ConnectionStatus";
 import ErrorBoundary from "~/components/ErrorBoundary";
 import Flex from "~/components/Flex";
@@ -33,7 +32,6 @@ import withStores from "~/components/withStores";
 import type { Editor as TEditor } from "~/editor";
 import { NavigationNode } from "~/types";
 import { client } from "~/utils/ApiClient";
-import { isCustomDomain } from "~/utils/domains";
 import { emojiToUrl } from "~/utils/emoji";
 import { isModKey } from "~/utils/keyboard";
 import {
@@ -630,9 +628,6 @@ class DocumentScene extends React.Component<Props> {
                 </Flex>
               </React.Suspense>
             </MaxWidth>
-            {isShare && !isCustomDomain() && (
-              <Branding href="//www.getoutline.com?ref=sharelink" />
-            )}
           </Container>
         </Background>
         {!isShare && (
