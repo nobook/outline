@@ -6,8 +6,8 @@ build-base-image:
   stage: build-base-image
   script:
     - nvm use v14
-    - export DOCKER_FIILE=Dockerfile.base
-    - export DOCKER_PUBLISH_URL=registry.cn-qingdao.aliyuncs.com/nobook/outline_base_image
+    - export DOCKER_FILE=Dockerfile.base
+    - export DOCKER_PUBLISH_URL=registry.cn-qingdao.aliyuncs.com/nobook/outline-base-image
     - ci-build
   tags:
     - build-60.205.200.125
@@ -16,7 +16,7 @@ build-outline:
   stage: build-outline
   script:
     - nvm use v14
-    - export DOCKER_FIILE=Dockerfile
+    - export DOCKER_FILE=Dockerfile
     - unset DOCKER_PUBLISH_URL
     - ci-build
   tags:
