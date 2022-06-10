@@ -32,6 +32,7 @@ import Mindmeister from "./Mindmeister";
 import Miro from "./Miro";
 import ModeAnalytics from "./ModeAnalytics";
 import Otter from "./Otter";
+import PhysicsLab from "./PhysicsLab";
 import Pitch from "./Pitch";
 import Prezi from "./Prezi";
 import Scribe from "./Scribe";
@@ -77,6 +78,13 @@ const Img = styled(Image)`
 `;
 
 const embeds: EmbedDescriptor[] = [
+  {
+    title: "NOBOOK虚拟实验",
+    keywords: "physics",
+    icon: () => <Img src="/images/nobook.png" alt="Abstract" />,
+    component: PhysicsLab,
+    matcher: matcher(PhysicsLab),
+  },
   {
     title: "Abstract",
     keywords: "design",
