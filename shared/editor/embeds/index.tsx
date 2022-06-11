@@ -41,6 +41,7 @@ import Tldraw from "./Tldraw";
 import Trello from "./Trello";
 import Typeform from "./Typeform";
 import Vimeo from "./Vimeo";
+import VirtualLabVideo from "./VirtualLabVideo";
 import Whimsical from "./Whimsical";
 import YouTube from "./YouTube";
 
@@ -86,6 +87,13 @@ const embeds: EmbedDescriptor[] = [
     matcher: matcher(PhysicsLab),
   },
   {
+    title: "NOBOOK视频",
+    keywords: "video",
+    icon: () => <Img src="/images/nobook.png" alt="Abstract" />,
+    component: VirtualLabVideo,
+    matcher: matcher(VirtualLabVideo),
+  },
+  {
     title: "Abstract",
     keywords: "design",
     defaultHidden: true,
@@ -111,7 +119,6 @@ const embeds: EmbedDescriptor[] = [
   {
     title: "Bilibili",
     keywords: "video",
-    defaultHidden: true,
     icon: () => <Img src="/images/bilibili.png" alt="Bilibili" />,
     component: Bilibili,
     matcher: matcher(Bilibili),
