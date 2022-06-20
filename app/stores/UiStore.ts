@@ -91,7 +91,7 @@ class UiStore {
     this.languagePromptDismissed = data.languagePromptDismissed;
     this.sidebarCollapsed = !!data.sidebarCollapsed;
     this.sidebarWidth = data.sidebarWidth || defaultTheme.sidebarWidth;
-    this.tocVisible = !!data.tocVisible;
+    this.tocVisible = data.tocVisible === undefined ? true : data.tocVisible;
     this.theme = data.theme || Theme.System;
 
     autorun(() => {
