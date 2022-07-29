@@ -15,7 +15,6 @@ import {
 import styled from "styled-components";
 import breakpoint from "styled-components-breakpoint";
 import { Heading } from "@shared/editor/lib/getHeadings";
-import { parseDomain } from "@shared/utils/domains";
 import getTasks from "@shared/utils/getTasks";
 import RootStore from "~/stores/RootStore";
 import Document from "~/models/Document";
@@ -54,13 +53,21 @@ import References from "./References";
 
 const AUTOSAVE_DELAY = 3000;
 
+type Params = {
+  documentSlug: string;
+  revisionId?: string;
+  shareId?: string;
+};
+
+type LocationState = {
+  title?: string;
+  restore?: boolean;
+  revisionId?: string;
+};
+
 type Props = WithTranslation &
   RootStore &
-  RouteComponentProps<
-    Record<string, string>,
-    StaticContext,
-    { restore?: boolean; revisionId?: string }
-  > & {
+  RouteComponentProps<Params, StaticContext, LocationState> & {
     sharedTree?: NavigationNode;
     abilities: Record<string, any>;
     document: Document;
@@ -284,7 +291,7 @@ class DocumentScene extends React.Component<Props> {
       autosave?: boolean;
     } = {}
   ) => {
-    const { document, auth } = this.props;
+    const { document } = this.props;
     // prevent saves when we are already saving
     if (document.isSaving) {
       return;
@@ -310,22 +317,10 @@ class DocumentScene extends React.Component<Props> {
     this.isPublishing = !!options.publish;
 
     try {
-      let savedDocument = document;
-
-      if (auth.team?.collaborativeEditing) {
-        // update does not send "text" field to the API, this is a workaround
-        // while the multiplayer editor is toggleable. Once it's finalized
-        // this can be cleaned up to single code path
-        savedDocument = await document.update({
-          ...options,
-          lastRevision: this.lastRevision,
-        });
-      } else {
-        savedDocument = await document.save({
-          ...options,
-          lastRevision: this.lastRevision,
-        });
-      }
+      const savedDocument = await document.save({
+        ...options,
+        lastRevision: this.lastRevision,
+      });
 
       this.isEditorDirty = false;
       this.lastRevision = savedDocument.revision;
@@ -620,9 +615,6 @@ class DocumentScene extends React.Component<Props> {
                 </Flex>
               </React.Suspense>
             </MaxWidth>
-            {isShare && !parseDomain(window.location.origin).custom && (
-              <Branding href="//www.getoutline.com?ref=sharelink" />
-            )}
           </Container>
         </Background>
         {!isShare && (
