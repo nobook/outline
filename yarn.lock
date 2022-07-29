@@ -8531,7 +8531,7 @@ is-ci@^2.0.0:
   dependencies:
     ci-info "^2.0.0"
 
-is-core-module@^2.2.0, is-core-module@^2.8.0, is-core-module@^2.9.0:
+is-core-module@^2.8.0, is-core-module@^2.9.0:
   version "2.9.0"
   resolved "https://registry.npmmirror.com/is-core-module/-/is-core-module-2.9.0.tgz#e1c34429cd51c6dd9e09e0799e396e27b19a9c69"
   integrity sha512-+5FPy5PnwmO3lvfMb0AsoPaBG+5KHUI0wYFXOtYPnVVVspTFUuMZNfNaNVRt3FZadstu2c8x23vykRW/NBoU6A==
@@ -11136,10 +11136,10 @@ outline-icons@^1.43.1:
   resolved "https://registry.yarnpkg.com/outline-icons/-/outline-icons-1.43.1.tgz#3193c4c659c66b34788db043bb2f843b9c437a48"
   integrity sha512-REj+JsCFi2Jv5uG0/OrBsMVSBFAIsSROxynWbuO9r2eNT8wdqjni02Mk1gq1qFfTbwOvHJ+7ycadu6zlISAK2g==
 
-oy-vey@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/oy-vey/-/oy-vey-0.10.0.tgz#16160f837f0ea3d0340adfc2377ba93d1ed9ce76"
-  integrity sha512-mdfU2VUl3Ra1ofXiO6Nqd98PBRFWlPM5rTYvSqsDxQEeV5PCfWroWOoVyg8vOpGhJjcDFKIS62PfbPUJUQmSwQ==
+oy-vey@^0.11.2:
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/oy-vey/-/oy-vey-0.11.2.tgz#3bbc36a4064993a2ff52f985b066d44dcb4500d9"
+  integrity sha512-06prDST4MicbAWie4eXcouJbGhAu0r7j3Yta1KFtgs7v2t7goHmY06/GWFjT6lpIsGKJC+7vZtwdecRSYnFtPQ==
   dependencies:
     clean-css "^4.0.12"
     object-assign "^4.1.1"
@@ -11465,7 +11465,7 @@ path-key@^3.0.0, path-key@^3.1.0:
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-3.1.1.tgz#581f6ade658cbba65a0d3380de7753295054f375"
   integrity sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==
 
-path-parse@^1.0.6, path-parse@^1.0.7:
+path-parse@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
   integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
